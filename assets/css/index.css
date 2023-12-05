@@ -1,0 +1,313 @@
+@import url("/assets/css/global.css");
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.header {
+  padding: 100px 0 300px;
+  background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+  position: relative;
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite alternate;
+}
+
+.header::after {
+  content: "";
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, var(--primary-color), transparent);
+}
+
+.header-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.header-channels {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.header-channel {
+  object-fit: contain;
+}
+
+.header-title {
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.header-title-lighter {
+  font-weight: lighter;
+  font-size: 2rem;
+}
+
+.divider {
+  width: 70%;
+  max-width: 700px;
+  height: 5px;
+  background: var(--divider-bg-color);
+}
+
+.header-container p {
+  font-family: "Quicksand", sans-serif;
+}
+
+.monthly-price {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.price p:nth-of-type(2) {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.button-action {
+  animation: balance 2.2s linear infinite;
+}
+
+.header-text-small {
+  max-width: 300px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.main-container {
+  position: relative;
+  background: url("../images/background-movies-series.png") no-repeat;
+  background-size: cover;
+}
+
+.container-shape h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.subscription-plans {
+  display: flex;
+  justify-content: space-around;
+  gap: 80px;
+  margin: 40px 0;
+  perspective: 2000px;
+  perspective-origin: top;
+}
+
+.subscription-card {
+  background: var(--card-bg-color);
+  padding: 40px 60px;
+  border-radius: 8px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 1.5s ease-in-out;
+}
+
+.subscription-plans:has(.subscription-card:nth-child(1):hover)
+  .subscription-card:nth-child(2) {
+  transform: rotateY(-50deg);
+}
+
+.subscription-plans:has(.subscription-card:nth-child(2):hover)
+  .subscription-card:nth-child(1) {
+  transform: rotateY(50deg);
+}
+
+.subscription-plan {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.subscription-plan p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.price-style {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.subscription-description {
+  text-align: left;
+  list-style: none;
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  padding-left: 14px;
+}
+
+.subscription-description::marker {
+  content: "+";
+  font-size: 2rem;
+  margin: 0 8px 0 0;
+}
+
+.container-shape:nth-child(2) {
+  margin: 100px auto;
+}
+
+.container-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.container-cards {
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid transparent;
+  transition: transform 0.8s, background 0.8s, border 1s;
+}
+
+.container-cards:hover {
+  transform: scale(1.1);
+  border: 2px solid var(--tertiary-color);
+}
+
+.card-image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 2s;
+}
+
+.card-image:hover {
+  opacity: 0;
+}
+
+/* HBO Card */
+.container-cards:nth-child(1):hover{
+  background-image: url("/assets/images/hbo-hover_0.webp");
+}
+
+/* Max Originals Card */
+.container-cards:nth-child(2):hover {
+  background-image: url("/assets/images/max-Hover.webp");
+}
+
+/* DC Card */
+.container-cards:nth-child(3):hover {
+  background-image: url("/assets/images/dc-Hover.webp");
+}
+
+/* WB Card */
+.container-cards:nth-child(4):hover {
+  background-image: url("/assets/images/wb-Hover.webp");
+}
+
+/* CN Card */
+.container-cards:nth-child(5):hover {
+  background-image: url("/assets/images/cn-Hover.png");
+}
+
+/* Champions League Card */
+.container-cards:nth-child(6):hover {
+  background-image: url("/assets/images/ucl-Hover.webp");
+}
+
+/* ANIMATION */
+@keyframes balance {
+
+  0%,10% {
+    transform: rotate(0);
+  }
+
+  15% {
+    transform: rotate(-15deg);
+  }
+
+  20% {
+    transform: rotate(15deg);
+  }
+
+  25% {
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    transform: rotate(15deg);
+  }
+
+  35% {
+    transform: rotate(-15deg);
+  }
+
+  40%, 100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 780px){
+  .subscription-plans {
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+  }
+  .container-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px){
+  .container-grid{
+    grid-template-columns: repeat(6, 100%);
+    grid-auto-flow: column;
+    overflow: auto hidden;
+  }
+  .subscription-plans {
+    gap: 40px;
+    padding: 5px 5px;
+  }
+  .subscription-description{
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .subscription-card{
+    padding: 20px;
+  }
+  .header-channels{
+    max-width: 300px;
+  }
+  .header-container{
+    padding: 90px 0;
+}
+}
+
+@media (pointer: coarse) {
+  .container-card:hover {
+    transform: none;
+  }
+}
